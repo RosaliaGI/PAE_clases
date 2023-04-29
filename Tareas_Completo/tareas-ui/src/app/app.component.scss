@@ -1,0 +1,17 @@
+#panels {
+    width: 100%;
+}
+
+.sidebar,
+.home {
+    display: inline-block;
+    width: 48%;
+}
+
+.sidebar {
+    float: left;
+}
+
+.home {
+    float: right;
+}

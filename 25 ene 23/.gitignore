@@ -1,0 +1,5 @@
+node_modules
+#Los que terminan inmediatamente despues
+dist/css/*.map 
+#Cualquier subcarpeta
+dist/css/**/*.map

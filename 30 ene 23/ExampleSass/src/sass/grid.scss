@@ -1,0 +1,59 @@
+@use 'sass:math';
+@import "colores";
+@import "mixins";
+
+$columnas: 12;
+
+@function getWidth($cols) {
+    @return math.div($cols, $columnas)*100%;
+}
+
+
+@for $i from 1 through $columnas {
+    .columna-#{$i} {
+        width: getWidth($i);
+    }
+}
+
+.fila {
+    width: 100%;
+
+    >div[class^="columna-"] {
+        float: left;
+        box-sizing: border-box;
+    }
+
+    &.columna-75 {
+        width: 75%;
+    }
+
+    &.columna-50 {
+        width: 50%;
+    }
+
+    &.columna-25 {
+        width: 25%;
+    }
+
+    &.rtl {
+        border: solid 1px $color-primario;
+    }
+
+    @include tablet {
+        &.columna-tablet-75 {
+            width: 75%;
+        }
+    }
+
+    @include mobile {
+        &.columna-mobile-100 {
+            width: 100%;
+        }
+    }
+}
+
+.fila::after {
+    content: "";
+    display: table;
+    clear: both;
+}

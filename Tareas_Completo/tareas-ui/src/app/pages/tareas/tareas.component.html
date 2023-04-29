@@ -1,0 +1,12 @@
+<h2>Lista de tareas</h2>
+Tarea seleccionada: {{tarea.titulo || 'Ninguna'}}
+
+<!--  
+opcion 1
+<input type="text" placeholder="Buscar..." [(ngModel)]="buscar" (keypress)="detectarEnter($event)">
+event se usa cuando necesita el dato del evento
+<button (click)="filtrar()">Buscar</button>
+-->
+
+<app-lista [items]="tareas" (onSeleccted)="setTarea($event)"></app-lista>
+

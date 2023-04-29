@@ -1,0 +1,28 @@
+<div>
+    <form [formGroup]="formRegistro">
+        <div>
+            <span for="nombre">Nombre</span>
+            <input name="nombre" placeholder="Nombre" type="text" formControlName="nombre">
+        </div>
+        <div>
+            <span>Email</span>
+            <input name="email" placeholder="Email" type="text" formControlName="email">
+        </div>
+        <div>
+            <span>Password</span>
+            <input name="password" placeholder="Password" type="password" formControlName="password">
+        </div>
+        <div>
+            <span>Confirm Password</span>
+            <input name="confPassword" placeholder="Confirmar Password" type="password" formControlName="confirm">
+        </div>
+        <div>
+
+            <label><input name="checkbox" type="checkbox" formControlName="accept">Acepto terminos blah
+                blah</label>
+        </div>
+        <div>
+            <button [disabled]="formRegistro.invalid">Registrarse</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,29 @@
+@import "colores";
+@import "mixins";
+
+html,
+body {
+    @include nomargin;
+    font-family: arial;
+}
+
+header {
+    background-color: $color-primario;
+}
+
+.boton {
+    background-color: $color-fondo-default;
+    padding: 6px 12px;
+    font-size: 18px;
+    border-radius: 6px;
+
+    &-primario {
+        @extend .boton;
+        background-color: $color-primario;
+    }
+
+    &-secundario {
+        @extend .boton;
+        background-color: $color-secundario;
+    }
+}

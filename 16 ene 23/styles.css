@@ -1,0 +1,27 @@
+body {
+    background-color: green;
+}
+
+h1 {
+    background-color: gray;
+    color: antiquewhite;
+    align-content: center;
+}
+
+footer{
+    background-color: black;
+    color: gray;
+}
+
+#left{
+    width: 15%;
+}
+
+#center{
+    width: 70%;
+    background-color: gray;
+}
+
+#images{
+    width: 15%;
+}

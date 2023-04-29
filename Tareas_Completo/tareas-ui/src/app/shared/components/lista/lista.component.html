@@ -1,0 +1,12 @@
+<form (submit)="filtrar()">
+    <input name="campo" type="text" placeholder="Buscar..." [(ngModel)]="buscar">
+    //event se usa cuando necesita el dato del evento
+    <button="filtrar()">Buscar</button>
+</form>
+
+
+<ul>
+    <li *ngFor="let item of itemsFiltrados" (click)="seleccionar(item)">
+        {{item.title}}
+    </li>
+</ul>

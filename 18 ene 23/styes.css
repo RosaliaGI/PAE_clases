@@ -1,0 +1,39 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: serif;
+}
+
+body{
+    height: 100%;
+}
+
+header, footer{
+    height: 80px;
+    width: 100%;
+    background-color: blueviolet;
+}
+
+main{
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.container{
+    width: 100%;
+}
+
+.container > div{
+    background-color: lightpink;
+    height: 100px;
+    width: 25%;
+    float: left;
+    border: solid 1px pink;
+    box-sizing: border-box;
+}
+
+.container::after{
+    content: "";
+    display: table;
+    clear: both;
+}

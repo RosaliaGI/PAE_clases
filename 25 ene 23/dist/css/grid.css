@@ -1,0 +1,35 @@
+.fila {
+  width: 100%;
+}
+.fila > div[class^=columna-] {
+  float: left;
+  box-sizing: border-box;
+}
+.fila.columna-75 {
+  width: 75%;
+}
+.fila.columna-50 {
+  width: 50%;
+}
+.fila.columna-25 {
+  width: 25%;
+}
+.fila.rtl {
+  border: solid 1px blue;
+}
+@media screen and (max-width: 1024px) {
+  .fila.columna-tablet-75 {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .fila.columna-mobile-100 {
+    width: 100%;
+  }
+}
+
+.fila::after {
+  content: "";
+  display: table;
+  clear: both;
+}
