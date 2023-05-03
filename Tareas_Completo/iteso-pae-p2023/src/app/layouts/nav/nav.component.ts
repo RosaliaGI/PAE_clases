@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
+
 import { Tarea } from 'src/app/shared/interfaces/tarea';
 import { TareaService } from 'src/app/shared/services/tarea.service';
 import { TokenService } from 'src/app/shared/services/token.service';
@@ -17,7 +20,8 @@ export class NavComponent {
   constructor(
     tareaService: TareaService,
     private tokenService: TokenService,
-    private router: Router
+    private router: Router,
+    private socialAuthService: SocialAuthService
   ) {
     this.tarea = tareaService.getTarea();
     tareaService.observableTarea.subscribe((tarea: Tarea) => {
@@ -26,6 +30,11 @@ export class NavComponent {
 
     this.tokenService.authStatus.subscribe((status: boolean) => {
       this.logueado = status;
+    })
+    this.socialAuthService.authState.subscribe((user: SocialUser) => {
+      if (user) {
+        console.log('Usuario de Google', user)
+      }
     })
   }
 
